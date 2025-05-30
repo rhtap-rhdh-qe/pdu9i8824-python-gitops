@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pdu9i8824-python-gitops
+  description: This is GitOps manifest for pdu9i8824-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=pdu9i8824-python
+    backstage.io/kubernetes-id: pdu9i8824-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pdu9i8824-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pdu9i8824-python
